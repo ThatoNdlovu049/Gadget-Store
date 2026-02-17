@@ -1,4 +1,4 @@
-let phones = [
+let gadgets = [
     {
         name: "Iphone 17 Pro",
         type: "Smartphone",
@@ -48,7 +48,7 @@ searchIcon.addEventListener('click', () => {
                 heading.forEach(x => {
                     x.remove()
                 })
-        phones.forEach(gadget => {
+        gadgets.forEach(gadget => {
             
 
                 if(gadget.name.toLowerCase() === value.toLowerCase() || gadget.type.toLowerCase() === value.toLowerCase()){
@@ -78,7 +78,7 @@ searchIcon.addEventListener('click', () => {
                     heading.forEach(x => {
                         x.remove()
                     })
-                        phones.forEach(x => {
+                        gadgets.forEach(x => {
                             
                             if(name.textContent.toLowerCase() === x.name.toLowerCase()){
                                 let section = document.createElement('section');
@@ -113,12 +113,14 @@ searchIcon.addEventListener('click', () => {
 links.forEach(x => {
     x.addEventListener('click', () =>{
         let element = x.querySelector('p').textContent;
+        let section = document.createElement('section');
+        section.id = 'selected-device-container';
         let sections = document.querySelectorAll('section');
         for(let i = 0; i < sections.length; i++){
             sections[i].remove();
         }
         let notFound = true;
-        phones.forEach(cell => {
+        gadgets.forEach(cell => {
             if(element.toLowerCase() === cell.name.toLowerCase()){
 
                 notFound = false;
@@ -157,7 +159,8 @@ links.forEach(x => {
                     </a>
                 `;
                 figure2.setAttribute('id', 'alternative-pictures')
-                parent.append(figure, article, figure2);
+                section.append(figure, article, figure2);
+                parent.append(section);
                 
                 let selectedAlternative = document.querySelector('#alternative-pictures');
                 let anchor = selectedAlternative.querySelectorAll('a');

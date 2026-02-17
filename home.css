@@ -46,21 +46,30 @@
     border-bottom: 3px solid transparent;
     padding-bottom: 2px;
 }
-#search-icon{
+#header-icons{
     grid-column: 2/3;
     grid-row: 1/2;
     height: 20px;
+    display: flex;
     justify-self: end;
+    align-self: center;
 }
-#search-icon img{
+#header-icons img{
     width: 100%;
     height: 100%;
 }
-#search-icon:hover{
+#header-icons:hover{
     cursor: pointer;
+}
+#shoppingCart{
+    margin-left: 20px;
 }
 #textbox{
     margin-right: 10px;
+    border-radius: 10px;
+    border-style: none;
+    padding: 5px;
+    width: 130px;
 }
 #heading{
     grid-column: 1/4;
@@ -209,8 +218,10 @@ a{
 }
 @media (max-width: 600px) 
     {
-       
-     #header { 
+    #navigation{
+        display: none;
+    }   
+    #header { 
         grid-template-columns: 1fr; /* stack header content */
         padding: 10px;
     }

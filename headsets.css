@@ -49,10 +49,10 @@
 #search-icon{
     grid-column: 2/3;
     grid-row: 1/2;
-    display: flex;
     height: 20px;
+    display: flex;
     justify-self: end;
-    align-items: center;
+    align-self: center;
 }
 #search-icon img{
     width: 100%;
@@ -65,37 +65,26 @@
     margin-right: 10px;
 }
 #page-heading{
-    grid-column: 1/4;
-    grid-row: 2/3;
-    margin-top: 80px;
+    grid-template-columns: 1/4;
+    grid-template-rows: 2/3;
+    margin-top: 110px;
+    margin-left: 50px;
     font-size: 24px;
     font-family: sans-serif;
-    margin-left: 30px;
 }
-#cellphone1{
+#headphones-batch1{
     grid-column: 1/4;
     grid-row: 3/4;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#cellphone1 img{
-    width: 593px;
-    height: 400px;
-}
-#cellphone-batch1{
-    grid-column: 1/4;
-    grid-row: 4/5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 270px);
-    margin-top: 30px;
-    gap: 20px;
+    grid-template-rows: 250px;
+    gap: 30px;
+    margin-top: 50px;
 }
 #batch1-img1{
     grid-column: 1/2;
     grid-row: 1/2;
+    margin-left: 30px;
 }
 #batch1-img1 img{
     width: 100%;
@@ -125,23 +114,31 @@
     width: 100%;
     height: 100%;
 }
-figure a{
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
+#headset2{
+    grid-row: 4/5;
+    grid-column: 1/5;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 60px;
 }
-#cellphone-batch2{
-    grid-column: 1/4;
-    grid-row:5/6;
+#headset2  img{
+    width: 700px;
+    height: 400px;
+}
+#headphones-batch2{
+    grid-column: 1/5;
+    grid-row: 5/6;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 250px);
-    gap: 20px;
+     gap: 30px;
     margin-top: 50px;
 }
 #batch2-img1{
     grid-column: 1/2;
     grid-row: 1/2;
+    margin-left: 30px;
 }
 #batch2-img1 img{
     width: 100%;
@@ -163,21 +160,9 @@ figure a{
     width: 100%;
     height: 100%;
 }
-#batch2-img4{
-    grid-column: 4/5;
-    grid-row: 1/2;
-}
-#batch2-img4 img{
-    width: 100%;
-    height: 100%;
-}
-#batch2-img5{
-    grid-column: 5/6;
-    grid-row: 1/2;
-}
-#batch2-img5 img{
-    width: 100%;
-    height: 100%;
+a{
+    text-decoration: none;
+    color: black;
 }
 a img:hover{
     transform: scale(0.9);
@@ -186,64 +171,4 @@ a img:hover{
 a img{
     transition: all 0.4s ease-in-out;
     box-shadow: 6px 6px 10px transparent;
-}
-
-@media(max-width: 605px){
-    #header{
-        padding: 10px;
-        grid-template-columns: 1fr;
-    }
-    #navigation ul li { 
-        padding-left: 20px; 
-    }
-    #page-heading{
-        font-size: 18px;
-    }
-    
-    #cellphone1 img{
-        width: 473px;
-        height: 280px;
-    }
-    #cellphone-batch1{
-        grid-template-rows: repeat(1, 150px);
-    }
-    #cellphone-batch2{
-        grid-template-rows: repeat(1, 150px);
-    }
-}
-@media(max-width: 543px){
-    #header{
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-    
-    #page-heading{
-        font-size: 15px;
-    }
-    #cellphone1 img{
-        width: 370px;
-        height: 260px;
-    }
-    figure a{
-        font-size: 10px;
-    }
-}
-@media(max-width: 420px){
-    #header{
-        padding: 10px;   
-    }
-    #page-heading{
-        font-size: 12px;
-    }
-    #navigation ul li { 
-        padding-left: 20px; 
-    }
-    #navigation ul li a{
-        font-size: 13px;
-    }
-    #cellphone1 img{
-        width: 350px;
-        height: 260px;
-    }
-
 }

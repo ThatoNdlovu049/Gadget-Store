@@ -23,23 +23,24 @@ let gadgets = [
     }
 ]
 
-let searchIcon = document.querySelector('#search-icon img');
+let searchIcon = document.querySelector('#header-icons img');
 
 searchIcon.addEventListener('click', () => {
-    let search = document.querySelector('#search-icon');
-    if(searchIcon){
-        searchIcon.remove();
-    }
+    let search = document.querySelector('#header-icons');
+    search.textContent = "";
     let input = document.createElement('input');
     input.type = "text";
     input.id = "textbox";
 
-    let image = document.createElement('img');
-    image.src = "icons/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg";
+    let newSearchIcon = document.createElement('img');
+    newSearchIcon.src = "icons/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg";
 
-    search.append(input, image);
+    let shoppingCart = document.createElement('img');
+    shoppingCart.src = "icons/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg";
+    shoppingCart.id = 'shoppingCart';
+    search.append(input, newSearchIcon, shoppingCart);
 
-    image.addEventListener('click', () => {
+    newSearchIcon.addEventListener('click', () => {
 
         let parent = document.querySelector('.container');
 
