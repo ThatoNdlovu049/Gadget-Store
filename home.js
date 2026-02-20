@@ -22,6 +22,7 @@ let gadgets = [
         image: "cellphones/pexels-vickygraphy-13367286-new.jpg",
     }
 ]
+let cart = [];
 
 let searchIcon = document.querySelector('#header-icons img');
 
@@ -98,18 +99,81 @@ searchIcon.addEventListener('click', () => {
                                     <p>${x.specs.storage} STORAGE </p>
                                     <p>${x.specs.ram} RAM</p>
                                     <h2>${x.specs.price}</h2>
-                                    <button id="favourits-button">ADD TO FAVOURITES</button>
+                                    <button id="favourites-button">ADD TO FAVOURITES</button>
 
                                 `;
                                 article.setAttribute('id', 'device-details')
                                 section.append(figure, article)
                                 parent.append(section);
-                                
+                                let button = document.querySelector('#favourites-button');
+                                button.addEventListener('click', () => {
+                                    addToFavourite(x.name, x.type, x.specs.ram, x.specs.storage, x.specs.price, x.image)
+                                })
                         }
                     })
                 })
             }
         })
     })
+    shoppingCart.addEventListener('click', () => {
+        showFavourites();
+    })
     
 })
+document.querySelector('#shoppingCart').addEventListener('click', () => {
+    showFavourites();
+})
+//function for adding devices to the favourites lists
+function addToFavourite(Name, Type, Ram, Storage, Price, img){
+    let obj = {
+        name: Name,
+        type: Type,
+            specs:{
+                ram: Ram,
+                storage: Storage,
+                price: Price,
+
+            },
+        image: img
+    }
+    cart.push(obj);
+    alert("Added");
+
+}
+//shopping cart event
+
+function showFavourites(){
+    let parent = document.querySelector('.container');
+    let sections = document.querySelectorAll('section');
+                sections.forEach(x => {
+                    x.remove()
+                })
+    if(cart.length > 0){
+        let section = document.createElement('section');
+        section.id = 'cart-items';
+
+        cart.forEach(item => {
+            
+            let picture = document.createElement('img');
+            picture.src = item.image;
+
+            let article = document.createElement('article');
+            article.innerHTML = `
+                <p>${item.name}</p>
+                <p>${item.type}</p>
+                <p>${item.specs.ram} RAM</p>
+                <p>${item.specs.storage} STORAGE</p>
+                <p>${item.specs.price}</p>
+            `;
+            section.append(picture, article);
+            parent.append(section);
+        })
+    }else{
+        let paragraph = document.createElement('p');
+        let section = document.createElement('section');
+        section.id = 'empty-cart'
+        paragraph.textContent = 'Your shopping cart is empty';
+        section.append(paragraph);
+        parent.append(section);
+    }
+}
