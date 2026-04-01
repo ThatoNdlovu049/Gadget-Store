@@ -51,7 +51,7 @@ a{
     font-size: 2rem;
 }
 #favourits-button{
-    padding: 10px;
+    padding: 5px;
     border: none;
     background-color: rgb(171, 173, 147);
     border-radius: 10px;
@@ -73,17 +73,19 @@ a{
     transform: scale(0.8);
 }
 
+
 @media(max-width: 1024px){
     #selected-device{
-        margin-top: 80px;
+        margin-top: 60px;
     }
     #selected-device img{
-        height: 150px;
+        height: 160px;
     }
     #device-details{
         font-size: 1rem;
-        margin-top: 80px;
+        margin-top: 60px;
         padding-bottom: 5px;
+        margin-left: 5px;
     }
     #alternative-pictures a img{
         width: 35px;
@@ -93,8 +95,8 @@ a{
 }
 @media(max-width: 407px){
     #favourits-button{
-        padding: 5px;
-        font-size: 10px;
+        padding: 3px;
+        font-size: 8px;
     }
     #alternative-pictures a img{
         width: 30px;
