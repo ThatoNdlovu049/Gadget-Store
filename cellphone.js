@@ -150,6 +150,12 @@ let gadgets = [
         image5: "cellphones/steve-george-_MTVlkU8Kmo-unsplash.jpg"
     }
 ];
+//menue function
+function toggleMenu() {
+    document.getElementById('ham').classList.toggle('open');
+    document.getElementById('menuBox').classList.toggle('open');
+}
+
 let cart = [];
 
 let links = document.querySelectorAll('a');

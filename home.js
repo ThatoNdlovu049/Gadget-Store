@@ -26,7 +26,13 @@ let gadgets = [
             },
         image1: "cellphones/pexels-vickygraphy-13367286-new.jpg",
     }
-]
+];
+//menue function
+function toggleMenu() {
+    document.getElementById('ham').classList.toggle('open');
+    document.getElementById('menuBox').classList.toggle('open');
+}
+
 let cart = [];
 
 let searchIcon = document.querySelector('#header-icons img');
